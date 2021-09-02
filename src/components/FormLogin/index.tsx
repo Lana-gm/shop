@@ -4,7 +4,6 @@ import { useHistory, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
 import * as S from "./FormLogin.styles";
-import register from "../../images/register.svg";
 
 interface IFormInputs {
   username?: string;
@@ -33,7 +32,7 @@ const FormLogin = () => {
 
   return (
     <S.PageContainer>
-      <S.ImageContainer>{register}</S.ImageContainer>
+      {/* <S.ImageContainer></S.ImageContainer> */}
       <S.FormContainer>
         <h1>Acesse sua conta</h1>
         <form onSubmit={handleSubmit(handleForm)}>

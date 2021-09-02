@@ -9,17 +9,24 @@ export const PageContainer = styled.div`
 `;
 
 export const FormContainer = styled.div`
-  width: 346px;
-  background-color: #dee2e6;
-  justify-content: center;
-  padding: 40px;
-  border-radius: 8px;
+  width: 234px;
+  background-color: whitesmoke;
   text-align: center;
   font-family: sans-serif;
+  padding: 40px;
+  border-radius: 8px;
+
+  h1 {
+    font-size: 22px;
+  }
 
   form {
     display: flex;
     flex-direction: column;
+  }
+
+  @media (min-width: 992px) {
+    width: 346px;
   }
 `;
 

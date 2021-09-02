@@ -6,26 +6,35 @@ export const PageContainer = styled.div`
   height: calc(100vh - 64px);
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 `;
 
-export const ImageContainer = styled.div`
-  background-image: url(${register});
-`;
+// export const ImageContainer = styled.div`
+//   background-image: url(${register});
+//   height: 100vh;
+//   width: 100vw;
+// `;
 
 export const FormContainer = styled.div`
-  width: 346px;
-  background-color: #dee2e6;
-  justify-content: center;
-  padding: 40px;
-  border-radius: 8px;
+  width: 234px;
+  background-color: whitesmoke;
   text-align: center;
   font-family: sans-serif;
+  padding: 40px;
+  border-radius: 8px;
+
+  h1 {
+    font-size: 22px;
+  }
 
   form {
     display: flex;
     flex-direction: column;
+  }
+
+  @media (min-width: 992px) {
+    width: 346px;
   }
 `;
 
