@@ -1,20 +1,14 @@
 import styled from "styled-components";
-import register from "../../images/register.svg";
+import fundologin from "../../images/fundologin.svg";
 
 export const PageContainer = styled.div`
   width: 100vw;
   height: calc(100vh - 64px);
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 `;
-
-// export const ImageContainer = styled.div`
-//   background-image: url(${register});
-//   height: 100vh;
-//   width: 100vw;
-// `;
 
 export const FormContainer = styled.div`
   width: 234px;
@@ -35,6 +29,18 @@ export const FormContainer = styled.div`
 
   @media (min-width: 992px) {
     width: 346px;
+  }
+`;
+
+export const ImageContainer = styled.div`
+  display: none;
+
+  @media (min-width: 992px) {
+    display: flex;
+    width: 782px;
+    height: 604px;
+    background-size: cover;
+    background-image: url(${fundologin});
   }
 `;
 

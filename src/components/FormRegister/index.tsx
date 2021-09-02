@@ -33,6 +33,7 @@ const FormRegister = () => {
 
   return (
     <S.PageContainer>
+      <S.ImageContainer></S.ImageContainer>
       <S.FormContainer>
         <h1>Faça seu cadastro</h1>
         <form onSubmit={handleSubmit(handleForm)}>

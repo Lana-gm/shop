@@ -32,7 +32,6 @@ const FormLogin = () => {
 
   return (
     <S.PageContainer>
-      {/* <S.ImageContainer></S.ImageContainer> */}
       <S.FormContainer>
         <h1>Acesse sua conta</h1>
         <form onSubmit={handleSubmit(handleForm)}>
@@ -65,6 +64,7 @@ const FormLogin = () => {
           </p>
         </form>
       </S.FormContainer>
+      <S.ImageContainer></S.ImageContainer>
     </S.PageContainer>
   );
 };

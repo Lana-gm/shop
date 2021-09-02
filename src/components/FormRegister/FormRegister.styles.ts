@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import fundoregister from "../../images/fundoregister.svg";
 
 export const PageContainer = styled.div`
   width: 100vw;
   height: calc(100vh - 64px);
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 `;
 
@@ -27,6 +28,19 @@ export const FormContainer = styled.div`
 
   @media (min-width: 992px) {
     width: 346px;
+  }
+`;
+
+export const ImageContainer = styled.div`
+  display: none;
+
+  @media (min-width: 992px) {
+    display: flex;
+    width: 778px;
+    height: 604px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(${fundoregister});
   }
 `;
 
