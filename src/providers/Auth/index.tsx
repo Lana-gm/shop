@@ -1,42 +1,21 @@
-// import { createContext } from "react";
-// import { useState, useEffect } from "react";
+import { useContext } from "react";
+import { createContext } from "react";
+import { useState } from "react";
 
-// interface IAuth {
-//   auth: boolean;
-// }
+interface IAuthProviderProps {
+  children: React.ReactNode;
+}
 
-// interface IAuthProviderProps {
-//   children: React.ReactNode;
-// }
+const AuthContext = createContext({});
 
-// interface IAuthProviderData {
-//     auth: IAuth | ""
-// }
+export const AuthProvider = ({ children }: IAuthProviderProps) => {
+  const [auth, setAuth] = useState(false);
 
-// const AuthContext = createContext<IAuthProviderData>({} as IAuthProviderData);
-
-// export const AuthProvider = ({ children }: IAuthProviderProps) => {
-//   const [auth, setAuth] = useState<IAuth>();
-
-//   return (
-//     <AuthContext.Provider value={{ auth, setAuth }}>
-//       {children}
-//     </AuthContext.Provider>
-//   );
-// };
-
-//   const [auth, setAuth] = useState(false);
-
-//   useEffect(() => {
-//     const token = localStorage.getItem("@KenzieHop:token");
-
-//     if (token) {
-//       return setAuth(true);
-//     }
-//   }, [auth]);
-
-const Auth = () => {
-  return <h1>Hello</h1>;
+  return (
+    <AuthContext.Provider value={{ auth, setAuth }}>
+      {children}
+    </AuthContext.Provider>
+  );
 };
 
-export default Auth;
+export const useAuth = () => useContext(AuthContext);
