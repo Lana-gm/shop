@@ -1,22 +1,31 @@
 import { Toolbar, MenuItem } from "@material-ui/core";
 import { FiLogIn, FiShoppingCart } from "react-icons/fi";
+import { FaHome } from "react-icons/fa";
 import * as S from "./Header.styles";
+import { useHistory } from "react-router-dom";
 
-const Header = () => (
-  <S.Header>
-    <Toolbar>
-      <MenuItem>Home</MenuItem>
-      <MenuItem>Register</MenuItem>
-      <MenuItem>
-        <FiShoppingCart />
-        Cart
-      </MenuItem>
-      <MenuItem>
-        <FiLogIn />
-        Login
-      </MenuItem>
-    </Toolbar>
-  </S.Header>
-);
+const Header = () => {
+  const history = useHistory();
+
+  return (
+    <S.Header>
+      <Toolbar>
+        <MenuItem onClick={() => history.push("/")}>Cadastro</MenuItem>
+        <MenuItem onClick={() => history.push("/login")}>
+          <FiLogIn />
+          Login
+        </MenuItem>
+        <MenuItem onClick={() => history.push("/home")}>
+          <FaHome />
+          Home
+        </MenuItem>
+        <MenuItem onClick={() => history.push("/cart")}>
+          <FiShoppingCart />
+          Carrinho
+        </MenuItem>
+      </Toolbar>
+    </S.Header>
+  );
+};
 
 export default Header;
