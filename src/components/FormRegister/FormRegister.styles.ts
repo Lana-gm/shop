@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import fundoregister from "../../images/fundoregister.svg";
+import fundoregister from "../../assets/img/fundoregister.svg";
 
 export const PageContainer = styled.div`
   width: 100vw;

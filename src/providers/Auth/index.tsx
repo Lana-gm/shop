@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useEffect } from "react";
 import { createContext } from "react";
 import { useState } from "react";
 
@@ -11,11 +12,14 @@ const AuthContext = createContext({});
 export const AuthProvider = ({ children }: IAuthProviderProps) => {
   const [auth, setAuth] = useState(false);
 
-  return (
-    <AuthContext.Provider value={{ auth, setAuth }}>
-      {children}
-    </AuthContext.Provider>
-  );
+  const token = window.localStorage.getItem("token");
+  useEffect(() => {
+    if (token) {
+      setAuth(true);
+    }
+  }, [token]);
+
+  return <AuthContext.Provider value={auth}>{children}</AuthContext.Provider>;
 };
 
 export const useAuth = () => useContext(AuthContext);

@@ -3,9 +3,12 @@ import { FiLogIn, FiShoppingCart } from "react-icons/fi";
 import { FaHome } from "react-icons/fa";
 import * as S from "./Header.styles";
 import { useHistory } from "react-router-dom";
+import { useAuth } from "../../providers/Auth";
 
 const Header = () => {
   const history = useHistory();
+
+  const auth = useAuth();
 
   return (
     <S.Header>
@@ -15,14 +18,18 @@ const Header = () => {
           <FiLogIn />
           Login
         </MenuItem>
-        <MenuItem onClick={() => history.push("/home")}>
-          <FaHome />
-          Home
-        </MenuItem>
-        <MenuItem onClick={() => history.push("/cart")}>
-          <FiShoppingCart />
-          Carrinho
-        </MenuItem>
+        {auth && (
+          <>
+            <MenuItem onClick={() => history.push("/home")}>
+              <FaHome />
+              Home
+            </MenuItem>
+            <MenuItem onClick={() => history.push("/cart")}>
+              <FiShoppingCart />
+              Carrinho
+            </MenuItem>
+          </>
+        )}
       </Toolbar>
     </S.Header>
   );

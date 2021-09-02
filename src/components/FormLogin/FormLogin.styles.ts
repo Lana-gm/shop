@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import fundologin from "../../images/fundologin.svg";
+import fundologin from "../../assets/img/fundologin.svg";
 
 export const PageContainer = styled.div`
   width: 100vw;

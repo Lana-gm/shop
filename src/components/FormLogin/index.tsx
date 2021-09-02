@@ -23,7 +23,7 @@ const FormLogin = () => {
     axios
       .post("https://kenzieshop2.herokuapp.com/login", data)
       .then((res) => {
-        localStorage.setItem("@KenzieShop:token", res.data.accessToken);
+        localStorage.setItem("token", res.data.accessToken);
         toast.success("Sucesso ao logar");
         history.push("/home");
       })
