@@ -12,11 +12,12 @@ const AuthContext = createContext({});
 export const AuthProvider = ({ children }: IAuthProviderProps) => {
   const [auth, setAuth] = useState(false);
 
+  console.log("Provider", auth);
+
   const token = window.localStorage.getItem("token");
+
   useEffect(() => {
-    if (token) {
-      setAuth(true);
-    }
+    token && setAuth(true);
   }, [token]);
 
   return <AuthContext.Provider value={auth}>{children}</AuthContext.Provider>;

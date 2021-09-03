@@ -10,6 +10,8 @@ const Header = () => {
 
   const auth = useAuth();
 
+  console.log("header", auth);
+
   return (
     <S.Header>
       <Toolbar>
