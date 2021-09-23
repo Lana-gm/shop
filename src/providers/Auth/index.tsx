@@ -12,8 +12,6 @@ const AuthContext = createContext({});
 export const AuthProvider = ({ children }: IAuthProviderProps) => {
   const [auth, setAuth] = useState(false);
 
-  console.log("Provider", auth);
-
   const token = window.localStorage.getItem("token");
 
   useEffect(() => {

@@ -10,8 +10,6 @@ const Header = () => {
 
   const auth = useAuth();
 
-  console.log("header", auth);
-
   return (
     <S.Header>
       <Toolbar>
@@ -20,18 +18,14 @@ const Header = () => {
           <FiLogIn />
           Login
         </MenuItem>
-        {auth && (
-          <>
-            <MenuItem onClick={() => history.push("/home")}>
-              <FaHome />
-              Home
-            </MenuItem>
-            <MenuItem onClick={() => history.push("/cart")}>
-              <FiShoppingCart />
-              Carrinho
-            </MenuItem>
-          </>
-        )}
+        <MenuItem onClick={() => history.push("/home")}>
+          <FaHome />
+          Home
+        </MenuItem>
+        <MenuItem onClick={() => history.push("/cart")}>
+          <FiShoppingCart />
+          Carrinho
+        </MenuItem>
       </Toolbar>
     </S.Header>
   );

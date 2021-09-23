@@ -24,7 +24,6 @@ const FormRegister = () => {
     axios
       .post("https://kenzieshop2.herokuapp.com/register", data)
       .then((res) => {
-        console.log(res.data);
         toast.success("Sucesso ao criar a conta");
         history.push("/login");
       })
